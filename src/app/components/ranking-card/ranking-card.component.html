@@ -1,0 +1,7 @@
+<td>{{ rank }}</td>
+<td><span class="admin" *ngIf="ranking.admin">{{ ranking.accountName }}</span>
+<span *ngIf="!ranking.admin">{{ ranking.accountName }}</span></td>
+<td>{{ ranking.cr | number }}</td>
+<td>{{ ranking.speed | number }}</td>
+<td>{{ ranking.accountServer }}</td>
+<td>{{ ranking.accountVip }}</td>
