@@ -3,6 +3,7 @@ import { environment } from "../../environments/environment";
 import {HttpClient} from "@angular/common/http";
 import {AuthService} from "./auth.service";
 import {Account} from "../models/account";
+import {Ranking} from "../models/ranking";
 
 @Injectable({
   providedIn: 'root'
@@ -15,5 +16,9 @@ export class AccountService {
 
   getMyAccounts() {
     return this.http.get<Account[]>(`${this.baseUrl}/me/${this.authService.userId}`, { headers: environment.headers, withCredentials: environment.withCredentials});
+  }
+
+  getRankings(page: number) {
+    return this.http.get<Ranking[]>(`${this.baseUrl}/ranking?page=${page}`, {headers: environment.headers, withCredentials: environment.withCredentials});
   }
 }

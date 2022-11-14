@@ -37,6 +37,7 @@ export class LoginComponent implements OnInit {
           this.registerFailure = false;
           this.authService.loggedIn = true;
           this.authService.userId = response.id;
+          this.authService.username = response.username;
           this.authService.admin = response.admin;
           this.user = response;
         },

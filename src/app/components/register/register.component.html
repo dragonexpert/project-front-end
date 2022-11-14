@@ -1,1 +1,23 @@
-<p>register works!</p>
+<app-navbar></app-navbar>
+<form id="login-form" [formGroup]="loginForm">
+  <div class="alert alert-danger" *ngIf="registerFailure">The username is already in use.</div>
+  <div class="row">
+    <label for="username" class="col-1">Username</label>
+    <div class="col-1"></div>
+    <input type="text" id="username" class="col-2" formControlName="username" placeholder="Enter username" required>
+  </div>
+  <div class="row">
+    <label for="password" class="col-1">Password</label>
+    <div class="col-1"></div>
+    <input type="password" class="col-2" formControlName="password" id="password" required>
+  </div>
+  <div class="row">
+    <label for="email" class="col-1">Email</label>
+    <div class="col-1"></div>
+    <input type="email" class="col-2" formControlName="email" id="email" required>
+  </div>
+  <div class="row">
+    <div class="col-2"></div>
+    <button class="btn btn-primary col-1" (click)="register()">Register</button>
+  </div>
+</form>

@@ -1,0 +1,6 @@
+<app-navbar></app-navbar>
+<h2>FAQ</h2>
+<br>
+<div id="faqPage" *ngFor="let faq of allFaqs">
+     <app-faq-card [faq]="faq"></app-faq-card>
+</div>
