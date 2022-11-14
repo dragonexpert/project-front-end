@@ -3,7 +3,14 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+    withCredentials: true,
+    baseUrl: "https://app.fantasyelves.com",
+    headers: {
+      'Content-Type': 'application/json',
+      'Cache-Control': 'no-cache',
+      'Access-Control-Allow-Origin': 'http://localhost:4200'
+    }
 };
 
 /*

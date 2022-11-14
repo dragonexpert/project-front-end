@@ -1,0 +1,23 @@
+<table class="table table-info table-border">
+  <thead>
+    <tr>
+      <th scope="col">Account Name</th>
+      <th scope="col">CR</th>
+      <th scope="col">Server</th>
+      <th scope="col">VIP Level</th>
+      <th scope="col">Speed</th>
+      <th scope="col">Modify</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let account of allAccounts">
+    <td><span class="admin" *ngIf="admin">{{ account.accountName }}</span>
+    <span *ngIf="!admin">{{ account.accountName }}</span></td>
+    <td> {{ account.cr | number }}</td>
+    <td> {{ account.accountServer }}</td>
+    <td> {{ account.accountVip }}</td>
+    <td> {{ account.speed | number }}</td>
+    <td>In progress</td>
+  </tr>
+  </tbody>
+</table>
