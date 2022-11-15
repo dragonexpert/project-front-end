@@ -26,6 +26,18 @@ import { ChangePasswordComponent } from './components/change-password/change-pas
 import { UnescapePipe } from './pipes/unescape.pipe';
 import { FaqCardComponent } from './components/faq-card/faq-card.component';
 import { RankingCardComponent } from './components/ranking-card/ranking-card.component';
+import { GemCardComponent } from './components/gem-card/gem-card.component';
+import { CapitalizationPipe } from './pipes/capitalization.pipe';
+import { TierComponent } from './components/tier/tier.component';
+import { SpiritComponent } from './components/spirit/spirit.component';
+import { PokemonCardComponent } from './components/pokemon-card/pokemon-card.component';
+import { TierFormatterPipe } from './pipes/tier-formatter.pipe';
+import { SpiritFormatterPipe } from './pipes/spirit-formatter.pipe';
+import { SingleGemComponent } from './components/single-gem/single-gem.component';
+import { SinglePokemonComponent } from './components/single-pokemon/single-pokemon.component';
+import { SpiritCardComponent } from './components/spirit-card/spirit-card.component';
+import { SocialMediaCardComponent } from './components/social-media-card/social-media-card.component';
+import { GalleryBonusCardComponent } from './components/gallery-bonus-card/gallery-bonus-card.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +63,19 @@ import { RankingCardComponent } from './components/ranking-card/ranking-card.com
     ChangePasswordComponent,
     UnescapePipe,
     FaqCardComponent,
-    RankingCardComponent
+    RankingCardComponent,
+    GemCardComponent,
+    CapitalizationPipe,
+    TierComponent,
+    SpiritComponent,
+    PokemonCardComponent,
+    TierFormatterPipe,
+    SpiritFormatterPipe,
+    SingleGemComponent,
+    SinglePokemonComponent,
+    SpiritCardComponent,
+    SocialMediaCardComponent,
+    GalleryBonusCardComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,25 @@
+<app-navbar></app-navbar>
+<div id="pokemonTab">
+  <button class="btn btn-primary" [routerLink]="['/pokemon']">Pokemon</button>
+  <button class="btn btn-primary" [routerLink]="['/tier']">Tier List</button>
+  <button class="btn btn-primary" [routerLink]="['/gems']">Exclusive Gems</button>
+  <button class="btn btn-primary" [routerLink]="['/spirit']">Spirits</button>
+</div>
+<table class="table table-info table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Spirit ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Initial Rage</th>
+      <th scope="col">Rage On Attack</th>
+      <th scope="col">Rage On Hit</th>
+      <th scope="col">Rage On Kill</th>
+      <th scope="col">Description</th>
+      <th scope="col">Pokemon List</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let spirit of allSpirits" app-spirit-card [spirit]="spirit">
+    </tr>
+  </tbody>
+</table>

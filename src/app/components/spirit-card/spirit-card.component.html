@@ -1,0 +1,17 @@
+<td>{{ spirit.spirit_id }}</td>
+<td>{{ spirit.spirit_name }}</td>
+<td>{{ spirit.rage_initial }}</td>
+<td>{{ spirit.rage_on_attack }}</td>
+<td>{{ spirit.rage_on_hit }}</td>
+<td>{{ spirit.rage_on_kill }}</td>
+<td>{{ spirit.description }}</td>
+<td>
+  <div *ngIf="!showPokemon" class="text-decoration-underline" (click)="getSpiritPokemon()">Show Pok&eacute;mon</div>
+  <div *ngIf="showPokemon">
+    <ul>
+      <li *ngFor="let pokemon of spiritPokemon">
+        <a class="text-decoration-underline" [routerLink]="['/pokemon/name/', pokemon.name]">{{ pokemon.name | capitalization }}</a>
+      </li>
+    </ul>
+  </div>
+</td>

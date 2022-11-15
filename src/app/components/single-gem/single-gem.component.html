@@ -1,0 +1,31 @@
+<app-navbar></app-navbar>
+<table class="table table-bordered table-info">
+  <thead>
+  <tr>
+    <th scope="col">Name</th>
+    <th scope="col">Color</th>
+    <th scope="col">Attack</th>
+    <th scope="col">Defense</th>
+    <th scope="col">HP</th>
+    <th scope="col">Bonus</th>
+    <th scope="col">Bonus Value</th>
+    <th scope="col">Trait</th>
+    <th scope="col">Trait Value</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>{{ gemName | capitalization}}</td>
+    <td>{{ singleGem.color | capitalization}}</td>
+    <td>{{ singleGem.attack}}</td>
+    <td>{{ singleGem.defense}}</td>
+    <td>{{ singleGem.hp}}</td>
+    <td>{{ singleGem.bonus}}</td>
+    <td *ngIf="singleGem.bonusValue">{{ singleGem.bonusValue}}</td>
+    <td *ngIf="!singleGem.bonusValue"></td>
+    <td *ngIf="exclusive"><a [routerLink]="['/pokemon/name', singleGem.trait]" class="text-decoration-underline">{{ singleGem.trait | capitalization }}</a></td>
+    <td *ngIf="!exclusive">{{ singleGem.trait | capitalization }}</td>
+    <td>{{ singleGem.traitValue}}</td>
+  </tr>
+  </tbody>
+</table>

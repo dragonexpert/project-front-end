@@ -1,2 +1,17 @@
 <app-navbar></app-navbar>
-<p>codes works!</p>
+<table class="table table-info table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Code</th>
+      <th scope="col">VIP Required</th>
+      <th scope="col">Diamonds</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let code of allCodes">
+      <td>{{ code.code }}</td>
+      <td>{{ code.vipRequired }}</td>
+      <td>{{ code.diamonds }}</td>
+    </tr>
+  </tbody>
+</table>

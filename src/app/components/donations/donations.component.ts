@@ -12,4 +12,5 @@ export class DonationsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // Need to create an endpoint in the Java application for fetching donors if I want this to update automatically.
 }

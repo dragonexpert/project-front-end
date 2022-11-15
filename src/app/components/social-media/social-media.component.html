@@ -1,2 +1,18 @@
 <app-navbar></app-navbar>
-<p>social-media works!</p>
+<div id="socialMediaTabs">
+  <a class="external-link" href="https://discord.gg/y57pf4UbNC" target="_blank"><button class="btn btn-primary">Discord</button></a>
+  <a class="external-link" href="https://www.facebook.com/groups/607241106914408" target="_blank"><button class="btn btn-primary">Facebook</button></a>
+</div>
+
+<table class="table table-info table-bordered">
+  <thead>
+    <tr>
+      <th>Username</th>
+      <th>Message</th>
+      <th>Time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let message of chronologicalMessages" app-social-media-card [message]="message"></tr>
+  </tbody>
+</table>

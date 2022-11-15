@@ -1,2 +1,59 @@
-<app-navbar></app-navbar>
-<p>gallery works!</p>
+<app-navbar xmlns="http://www.w3.org/1999/html"></app-navbar>
+<div id="galleryTab">
+    <button class="btn btn-primary" (click)="ShowGallery()">Galleries</button>
+    <button class="btn btn-primary" (click)="ShowGalleryBonuses()">Gallery Bonuses</button>
+  </div>
+<div *ngIf="activePage == 'gallery'">
+<table id="galleryTable" class="table table-info table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Gallery Name</th>
+      <th scope="col">Points For Unlock</th>
+      <th scope="col">Points For Star-Up</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let gallery of allgalleries">
+      <td>{{ gallery.galleryName }}</td>
+      <td>{{ gallery.unlockPoints }}</td>
+      <td>{{ gallery.unlockStarup }}</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div *ngIf="activePage == 'bonus'">
+  <table class="table table-info table-bordered">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Points</th>
+        <th>HP</th>
+        <th>HP %</th>
+        <th>Atk</th>
+        <th>Atk %</th>
+        <th>Def</th>
+        <th>Def %</th>
+        <th>Unlocks</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let bonus of allBonuses" app-gallery-bonus-card [bonus]="bonus">
+    </tr>
+    <tr>
+      <th colspan="9">Totals</th>
+    </tr>
+    <tr>
+      <td>Completion</td>
+      <td>{{ totalBonuses.points }}</td>
+      <td>{{ totalBonuses.hp | number }}</td>
+      <td>{{ totalBonuses.hpPercent }}%</td>
+      <td>{{ totalBonuses.atk | number }}</td>
+      <td>{{ totalBonuses.atkPercent}}%</td>
+      <td>{{ totalBonuses.def | number }}</td>
+      <td>{{ totalBonuses.defPercent}}%</td>
+      <td></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
