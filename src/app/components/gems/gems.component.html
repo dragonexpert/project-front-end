@@ -1,2 +1,28 @@
 <app-navbar></app-navbar>
-<p>gems works!</p>
+<div id="gemTab">
+  <button class="btn btn-primary" (click)="changePage('normalGems')">Standard Gems</button>
+  <button class="btn btn-primary login-required" (click)="changePage('exclusiveGems')">Exclusive Gems</button>
+</div>
+<table class="table table-bordered table-info">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Color</th>
+      <th scope="col">Attack</th>
+      <th scope="col">Defense</th>
+      <th scope="col">HP</th>
+      <th scope="col">Bonus</th>
+      <th scope="col">Bonus Value</th>
+      <th scope="col">Trait</th>
+      <th scope="col">Trait Value</th>
+    </tr>
+  </thead>
+  <tbody *ngIf="page == 'normalGems'">
+    <tr *ngFor="let gem of normalGems" app-gem-card [gem]="gem">
+    </tr>
+  </tbody>
+  <tbody *ngIf="page == 'exclusiveGems'">
+    <tr *ngFor="let gem of exclusiveGems" app-gem-card [gem]="gem">
+    </tr>
+  </tbody>
+</table>

@@ -1,2 +1,63 @@
 <app-navbar></app-navbar>
-<p>events works!</p>
+<div id="eventTab">
+  <button class="btn btn-primary" (click)="changePage('currentEvents')">Current Events</button>
+  <button class="btn btn-primary" (click)="changePage('eventTypes')">Event Explanations</button>
+</div>
+<div id="currentEvents" *ngIf="activePage == 'currentEvents'">
+  <table class="table table-info table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Event ID</th>
+        <th scope="col">Event Name</th>
+        <th scope="col">Event Date</th>
+        <th scope="col">Pok&eacute;mon</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let currentEvent of currentEvents">
+        <td>{{ currentEvent.id }}</td>
+        <td><a (click)="singleEventPage(currentEvent.eventName)" class="text-decoration-underline" style="cursor: pointer">{{ currentEvent.eventName }}</a></td>
+        <td>{{ currentEvent.eventDate }}</td>
+        <td>{{ currentEvent.pokemon }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div><!-- End Current Events -->
+
+<div id="eventTypes" *ngIf="activePage == 'eventTypes'">
+  <table class="table table-info table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Event ID</th>
+        <th scope="col">Event Name</th>
+        <th scope="col">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let eventType of eventTypes">
+        <td>{{ eventType.id }}</td>
+        <td>{{ eventType.eventName }}</td>
+        <td>{{ eventType.eventDescription }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div id="singleEvent" *ngIf="activePage == 'singleEvent'">
+  <table class="table table-info table-bordered">
+    <thead>
+    <tr>
+      <th scope="col">Event ID</th>
+      <th scope="col">Event Name</th>
+      <th scope="col">Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>{{ singleEvent.id }}</td>
+      <td>{{ singleEvent.eventName }}</td>
+      <td>{{ singleEvent.eventDescription }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

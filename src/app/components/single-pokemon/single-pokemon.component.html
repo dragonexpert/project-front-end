@@ -1,0 +1,31 @@
+<app-navbar></app-navbar>
+<table class="table table-info table-bordered">
+  <thead>
+  <tr>
+    <th scope="col">ID</th>
+    <th scope="col">Name</th>
+    <th scope="col">Tier</th>
+    <th scope="col">Weapon</th>
+    <th scope="col">Badge</th>
+    <th scope="col">Evolve Gem</th>
+    <th scope="col">Type</th>
+    <th scope="col">Spirit</th>
+    <th scope="col">Food</th>
+    <th scope="col">Exclusive Gem</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>{{ pokemon.pokemon_id }}</td>
+    <td>{{ pokemon.name | capitalization }}</td>
+    <td>{{ pokemon.tier_id | tierFormatter }}</td>
+    <td>{{ pokemon.weapon }}</td>
+    <td>{{ pokemon.badge }}</td>
+    <td>{{ pokemon.evolve_gem }}</td>
+    <td>{{ pokemon.type | capitalization }}</td>
+    <td>{{ pokemon.spirit_id | spiritFormatter }}</td>
+    <td>{{ pokemon.food | capitalization }}</td>
+    <td><a [routerLink]="['/gems/', pokemon.custom_gem_id]" class="text-decoration-underline">Gem Link</a></td>
+  </tr>
+  </tbody>
+</table>

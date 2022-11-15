@@ -1,2 +1,28 @@
 <app-navbar></app-navbar>
-<p>pokemon works!</p>
+<div id="pokemonTab">
+  <button class="btn btn-primary" [routerLink]="['/tier']">Tier List</button>
+  <button class="btn btn-primary" [routerLink]="['/gems']">Exclusive Gems</button>
+  <button class="btn btn-primary" [routerLink]="['/spirit']">Spirits</button>
+</div>
+<table class="table table-info table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Tier</th>
+      <th scope="col">Weapon</th>
+      <th scope="col">Badge</th>
+      <th scope="col">Evolve Gem</th>
+      <th scope="col">Type</th>
+      <th scope="col">Spirit</th>
+      <th scope="col">Food</th>
+      <th scope="col">Exclusive Gem</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let pokemon of allPokemon" app-pokemon-card [pokemon]="pokemon">
+    </tr>
+  </tbody>
+</table>
+
+

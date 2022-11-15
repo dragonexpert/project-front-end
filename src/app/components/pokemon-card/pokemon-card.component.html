@@ -1,0 +1,10 @@
+<td>{{ pokemon.pokemon_id }}</td>
+<td>{{ pokemon.name | capitalization }}</td>
+<td>{{ pokemon.tier_id | tierFormatter }}</td>
+<td>{{ pokemon.weapon }}</td>
+<td>{{ pokemon.badge }}</td>
+<td>{{ pokemon.evolve_gem}}</td>
+<td>{{ pokemon.type | capitalization }}</td>
+<td>{{ pokemon.spirit_id | spiritFormatter }}</td>
+<td>{{ pokemon.food | capitalization }}</td>
+<td><a [routerLink]="['/gems/', pokemon.custom_gem_id]" class="text-decoration-underline">Gem Link</a></td>

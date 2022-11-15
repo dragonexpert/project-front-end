@@ -1,2 +1,350 @@
 <app-navbar></app-navbar>
-<p>guides works!</p>
+<div id="guidePage">
+<div id="guideTab">
+  <button class="btn btn-primary" (click)="changeActiveGuide('growth')">Growth</button>
+  <button class="btn btn-primary" (click)="changeActiveGuide('adventure')">Adventure</button>
+  <button class="btn btn-primary" (click)="changeActiveGuide('arena')">KO Contest</button>
+  <button class="btn btn-primary" (click)="changeActiveGuide('hyper evolve')">Hyper Evolve</button>
+  <button class="btn btn-primary" (click)="changeActiveGuide('quench')">Quench Guide</button>
+</div>
+<div id="growthPage" *ngIf="activeGuide == 'growth'">
+  <h2>Growth Modes</h2>
+  <div class="guide-menu-container">
+    <ul>
+      <li><a class="nav-link guide-link" [routerLink]="['#growthIndex']">Index</a></li>
+      <li><a class="nav-link guide-link" [routerLink]="['#talent']">Talent</a></li>
+      <li><a class="nav-link guide-link" [routerLink]="['/guides']" fragment="pokemonSpirit">Pokemon Spirit</a></li>
+      <li><a class="nav-link guide-link" [routerLink]="['/guides']" fragment="artifact">Artifact</a></li>
+      <li><a class="nav-link guide-link" [routerLink]="['/guides']" fragment="feat">Feat</a></li>
+      <li><a class="nav-link guide-link" [routerLink]="['/guides']" fragment="timeCrystal">Time Crystal</a></li>
+      <li><a class="nav-link guide-link" [routerLink]="['/guides']" fragment="soulGuard">Soul Guard</a></li>
+      <li><a class="nav-link guide-link" [routerLink]="['/guides']" fragment="collection">Poke Collection</a></li>
+      <li><a class="nav-link guide-link" [routerLink]="['/guides']" fragment="growthGem">Gem</a></li>
+      <li><a class="nav-link guide-link" [routerLink]="['/guides']" fragment="gallery">PokeBall Achievement ( Gallery )</a></li>
+    </ul>
+  </div>
+  <br>
+
+  <h3 id="growthIndex">Index</h3>
+  <p>Index is where you spend index deck scrolls to gain stats for all your Pokemon. Once you have obtained a Pokemon, you can activate its index. A Pokemon cannot
+    have a higher index level than the number of stars it has. The maximum index level for any Pokemon is 7, while in Affinity Deck the maximum is 10. Upon leveling
+    up an index, your index score will rise. As you reach thresholds, you will gain stats for all your Pokemon. You can see the effect by tapping on Development. Each time
+    you increase the index level, you will also gain stats. You should focus first on the credit 13-15 Pokemon because they require far less index scrolls to max out.
+    To unlock an affinity, you must get all the required Pokemon to index 7 and complete the additional conditions specific to that affinity deck. To unlock index level
+    5 in an affinity index, you must get 1 advanced affinity deck scroll which can be obtained in certain events. To unlock index level 10, you will need 2 of those so
+    you will need a grand total of 3 advanced affinity deck scroll to max out an affinity index. The amount of regular index scrolls wildly various, but you should
+    keep in mind these provide much more index score than the others, such as God of the Ocean providing almost 20,000 index score.</p>
+  <br>
+  <br>
+
+  <h3 id="talent">Talent</h3>
+  <p>Talent has 3 separate trees which are unlocked based on level and having enough talent points on the previous tree. Talent does get to be expensive for gold costs
+    as you get to the higher levels of some of the things you can increase. You should focus the most on tree 1 and tree 3. Tree 2 the bonuses are not as useful. You
+    can obtain talent points from X-Server Vanquisher War, one per day also from Arena. Many events you can exchange event items for talent boxes.</p>
+  <br>
+  <br>
+
+  <h3 id="pokemonSpirit">Pokemon Spirit</h3>
+
+  <p>Pokemon Spirit is where you go to feed food to your Pokemon. Each time a Pokemon gains a level, its speed is increased by one point. At certain intervals the level will
+    reset and the title will change such as from Strange to Acquainted and also provide a small reward. As you progress, levels require more and more exp to level up. This
+    is one way to increase your team speed which will be important for winning matches. Detective Pikachu food cannot be obtained outside of its new server event. SP Pokemon
+    food is also only available during its event.</p>
+  <br>
+  <br>
+
+  <h3 id="artifact">Artifact</h3>
+  <p>Artifact is where you can spend your artifact soul. When you do a x10 cultivation, there are checkboxes next to each one to determine if you want to use it. The bottom
+    two bonuses that an artifact provides should be a top priority as they are percentage based. Each artifact will have unlock requirements which typically consists
+    of getting a certain number of Pokemon to a specific advance rank. The final artifact requires 8 Pokemon that have been advanced to Red which requires level 98. An
+    artifact that is easy to overlook is the Time Scepter which has bonuses for control rate and control rate immunity. This increases your chance of inflicting a status
+    condition on the foe and reduces the chance your Pokemon get afflicted with the condition.</p>
+  <br>
+  <br>
+
+  <h3 id="feat">Feat</h3>
+  <p>Feat is a section that can be thought of as achievements. When you complete one of them, you gain speed for your entire team. Most feats have 3 stars that you can get.
+    The first star is the easiest to obtain, but some of the 3 star ones get tricky or in the case of obtaining 1200 stars in stages, impossible. Doing these is highly recommended
+    as many of them can at least have the first level achieved without too much effort.</p>
+  <br>
+  <br>
+
+  <h3 id="timeCrystal">Time Crystal</h3>
+  <p>Time crystal is where you go to get alloys on your Pokemon. At first you will have access to single draw with coin, x10 draw with coin, single draw with diamond, and
+    x10 draw with diamond. You can do one single coin and one single diamond free each day. After reaching a certain level, you will unlock the x50 coin draw; unfortunately
+    it is not a discount from the x10.  Coin draws can result in white, green, blue, and purple alloys. Diamond draws the highest you can obtain are orange which are around
+    a 50/50 each x10 diamond draw. Unlocking Hyper Evolve 2 and Hyper Evolve 6 on Pokemon will require your crystal level to be a certain number. This number is what all the
+    crystals your Pokemon has equipped are. Using white and green crystals are good early on because they cost significantly less to upgrade. Hyper 6 though requires all
+    crystals on that Pokemon to be purple or higher. Red crystals provide the biggest boost and are gotten in some events and sometimes from top-up.</p>
+  <br>
+  <br>
+
+  <h3 id="soulGuard">Soul Guard</h3>
+  <p>Soul Guard lets you place up to 3 Pokemon eventually in chambers. These chambers provide a boost to all your Pokemon. There is first the base stat gains which are
+    determined by the level the chamber is. There are also 3 bonuses you can get. One bonus is what credit the Pokemon is; credit 17 Pokemon provide the biggest bonus.
+    The second bonus is what advance rank that Pokemon is at. Note that there is currently a bug where Red +1 does not provide a bonus. The final bonus is based on the
+    hyper evolve stage of the Pokemon. Hyper 6 provides the biggest bonus. Soul guard requires awaken alloys, soul guard ore, and lots of gold. It is more of an end game
+    thing because the cost to benefit is small.</p>
+  <br>
+  <br>
+
+  <h3 id="collection">Poke Collection</h3>
+  <p>Collection has many Pokemon in it. Each Pokemon has 4 columns and 6 rows. The first 2 columns require coins while the other 2 columns require diamonds to purchase.
+    The Pokemon get stronger the further down the row you go. Each Pokemon you buy from it increases the bonus value. The Pokemon's star level and advance rank also influence
+    the bonus it provides. Each collection has a set number of Pokemon in it and improves the stats of a specific type of Pokemon such as Atk. It is easy to spend a lot of
+    gold or diamonds here without realizing it. I recommend avoiding the 4th column until you get all the other Pokemon with 3 columns because of the vast difference in
+    diamond price.</p>
+  <br>
+  <br>
+
+  <h3 id="growthGem">Gem</h3>
+  <p>Each Pokemon can have 1 exclusive gem and 3 regular gems. Exclusive gems are gotten from events or for VIP players, there are some ways to get an exclusive gem
+    selection box. Exclusive gems cost more to level up, but they also are not ones you would ever replace. The normal gems you will want to use as many red gems as
+    possible because they provide the biggest boost to stats. Gems of Speed are the most used because they increase the speed by 100 points. As far as what specific bonus the
+    gem should have on the Pokemon, that depends entirely on the Pokemon. There are plans to write guides for individual Pokemon and team composition that would cover these
+    kind of things. Red gems you can use the Replace function to try and get a different trait or bonus. Dissolving Gems deletes them from your inventory and gives you some
+    gem essence which is used for Replace Gem and for breakthrough every 10 gem levels. For details on what each of the gems do, visit the gems page.</p>
+  <br>
+  <br>
+
+  <h3 id="gallery">Gallery</h3>
+  <p>Gallery is the place where you can amass a ton of power. There are 5 galleries total with each requiring a specific number of points to unlock. There is a separate point
+    threshold for unlocking star-up on that gallery. Each gallery has 30-31 paintings that require one or more specific Pokeball Pokemon. Golden Pokemon are the hardest to get
+    and can only be obtained with the advanced imprison scrolls. If you have all the Pokemon needed to activate a painting, it will let you know. Do activate more paintings
+    before starring up other ones. Do activate the paintings that require less golden Pokeballs because the bonuses gained from reaching point thresholds is great. Use Capture
+    to obtain more Pokeball Pokemon. The regular scrolls you can do up to 50 draws per day, while the red one is virtually limitless. You get rewards after a certain number of draws
+    on the red one. For details on gallery bonuses, check the Gallery Page.</p>
+</div> <!-- end growth -->
+
+  <div id="adventurePage" *ngIf="activeGuide == 'adventure'">
+    <h2>Adventure Modes</h2>
+    <div class="guide-menu-container">
+      <ul>
+        <li><a class="nav-link guide-link" [routerLink]="['/guides']" fragment="eventsStage">Events Stage</a></li>
+        <li><a class="nav-link guide-link" [routerLink]="['/guides']" fragment="pokemonTrial">Pokemon Trial</a></li>
+        <li><a class="nav-link guide-link" [routerLink]="['/guides']" fragment="purifyPokemon">Purify Pokemon</a></li>
+        <li><a class="nav-link guide-link" [routerLink]="['/guides']" fragment="explore">Explore</a></li>
+        <li><a class="nav-link guide-link" [routerLink]="['/guides']" fragment="worldBoss">World Boss</a></li>
+      </ul>
+    </div>
+    <br>
+
+    <h3 id="eventsStage">Events Stage</h3>
+    <p>
+      Events Stage is where your daily training is done. You can get gold, exp potions, food, and shards depending on the stage you play. The higher the difficulty of the stage,
+      the better the rewards. Each of these stages can only be played a certain number of times per day. The bottom two stages are only available on certain days of the week.
+      All stages are available on Sunday.
+    </p>
+    <br>
+    <br>
+
+    <h3 id="pokemonTrial">Pokemon Trial</h3>
+    <p>
+      In Pokemon Trial, you bring a team of up to 6 Pokemon with you. When you defeat a floor you gain stars according to how many of your Pokemon are alive and the difficulty of the stage.
+      In the beginning of the game, you might not be strong enough to get to the top. That is fine, just go however far you can go. In time you will become strong enough to get to the top.
+      After defeating a floor you will either get a treasure chest that contains a prize or the chance to purchase buffs. Unless there is an event going on, I highly discourage
+      using diamonds to be able to open the treasure chests additional times. If you have the option to purchase buffs, generally increasing your attack and critical rate is the
+      best method to go for. You may need Bloodsucking which makes it so your Pokemon heal themselves each time they attack. Late game you will not need this. As you play this mode,
+      you will gain trial coins which can be used to purchase items from the trial store. Some players choose to get keys as often as they can, however, I believe saving the trial points
+      for Red Ability Chests will be greater use, especially for free to play users since Red Ability Chests are hard to get. You can also gain rewards every time you hit a score threshold.
+    </p>
+    <br>
+    <br>
+
+    <h3 id="purifyPokemon">Purify Pokemon</h3>
+    <p>
+      When you unlock Purify Pokemon, you can challenge one of six potential Pokemon as long as you have obtained that Pokemon. You can either join an existing team or
+      create your own team. Make sure to send an invite out because you get more rewards the more people who join your team to fight that Pokemon. When you defeat the Pokemon
+      you will get some rewards which usually includes 1 shard of the Pokemon you were fighting. You can choose to purchase the other box, but 50 diamonds is not worth it.
+      Purify Pokemon is a good way to gain shards for the credit 14 and 15 Pokemon.
+    </p>
+    <br>
+    <br>
+
+    <h3 id="explore">Explore</h3>
+    <p>
+      Explore is a fun mode that gets you decent rewards. Each event space can be one of several things. Rest Stop is just plain. Quiz questions enable you to answer a question
+      correctly to gain explore coins. There are also Capture events where Pokemon will walk across the screen and you have the chance to capture them. This is the best way to get
+      any credit 14 and 15 Pokemon. Most of the time you capture a Pokemon you will get from 1-3 shards. If you are extremely lucky, you can get a 2* of that Pokemon which yields
+      20 shards. Solo Challenges enable you to test your team against a boss. When you win, you will get rewards which includes exp potions, food, and sometimes Pokedex Shards.
+      Boss Challenges also let you test your team against a boss battle. Unlike solo challenges, you can gain the opportunity to skip the battle and get the rewards. You
+      are also able to fight boss's from another player up to 3 times per day. Take advantage of this because it is a great source of exp potions.</p>
+
+    <p>The shop contains Pokedex shards which are used to fill the Pokedex. Always buy Scyther shards when you can because it is not available in the pokedex shard selection
+      bag. You can also find rare shards such as Totodile which doesn't appear in capture. Do not bother to save up for awaken weapons in the Explore Shop as they are not
+      worth it. The Pokedex can increase the stats of Pokemon. There are also a select few spaces that increase the speed of your team. Those spaces should be a priority
+      because going first can often make the difference between winning and losing a fight. It should be noted that only the first two Pokedex can be accessed at this time.
+    </p>
+    <br>
+    <br>
+
+    <h3 id="worldBoss">World Boss</h3>
+    <p>
+      World Boss opens after your server has been open for a specific number of days. A boss appears with a large amount of health. Everyone from your server is able to fight it
+      to take it down. Each time it is defeated, it will be one level higher the next time until it reaches the level cap. Failure to defeat the boss in time will result
+      in the boss going down 10 levels which greatly reduces its HP. Fighting the boss results in gaining soul guard materials, some gold, and 1 free key per day. Each time
+      you fight the boss, you will have a cooldown period where you cannot attack the boss. You can eliminate this cooldown buy using diamonds to bypass it. You can
+      get an additional chest key each day if you do a diamond recharge 3 times against the world boss in a given day. The cost to do 3 diamond recharge is 60 diamonds total.
+      The World Boss is available at noon and 9PM central time.
+    </p>
+  </div> <!-- Ends adventure -->
+
+  <div id="arenaPage" *ngIf="activeGuide == 'arena'">
+    <h2>KO Contest Modes</h2>
+    <div class="guide-menu-container">
+      <ul>
+        <li><a class="nav-link guide-link" [routerLink]="['/guides']" fragment="arena">Arena</a></li>
+        <li><a class="nav-link guide-link" [routerLink]="['/guides']" fragment="vanquisherWar">Vanquisher War</a></li>
+        <li><a class="nav-link guide-link" [routerLink]="['/guides']" fragment="guildWar">Guild War</a></li>
+        <li><a class="nav-link guide-link" [routerLink]="['/guides']" fragment="x-serverVanquisherWar">X-Server Vanquisher War</a></li>
+        <li><a class="nav-link guide-link" [routerLink]="['/guides']" fragment="x-serverMineWar">X-Server Mine War</a></li>
+        <li><a class="nav-link guide-link" [routerLink]="['/guides']" fragment="championTrial">Champion Trial</a></li>
+        <li><a class="nav-link guide-link" [routerLink]="['/guides']" fragment="squadArena">Squad Arena</a></li>
+      </ul>
+    </div>
+    <br>
+
+    <h3 id="arena">Arena</h3>
+    <p>
+      In Arena, you are fighting it out to get to the top ranks. At the end of each day you will get a reward based on your ranking. This includes diamonds and arena coins.
+      The arena coins can be spent in the Arena Shop. Rebirth items will be something to go after in the late game. In the early game, going after the advanced exp badge
+      is your best bet. This badge is used to increase the level your Pokemon's badge is. You are allowed 6 Pokemon on your team. The speed is determined by the total speed
+      of all Pokemon you own. You only need 500 rage to use an Ultimate Skill in this mode. Speed will win more often than power, so focus on gaining good amounts of speed.
+      See the FAQ to check ways you can increase your team's speed. There are rewards for reaching certain ranks in the arena. The arena takes place on just your own server.
+    </p>
+    <br>
+    <br>
+
+    <h3 id="vanquisherWar">Vanquisher War</h3>
+    <p>
+      Vanquisher War allows you to send 10 of your Pokemon into battle. The first 10 fights are used to determine who qualifies for the top 8. If you lose 3 battles in
+      the qualifying rounds, you are out. The qualifying rounds are 1 on 1 battles. Mega Aggron and Ash-Greninja perform amazing here and almost never lose due to their
+      passive abilities. You should mostly avoid defensive Pokemon and instead focus on offense because if you can't KO the opposing Pokemon within the allotted turns,
+      you lose. The top 8 is 3 on 3 battles. The turn order is decided by the team with the most speed first. After that, players take turns. It doesn't recalculate speed
+      after a Pokemon faints. The battles require 1000 rage to be able to use an Ultimate Skill. All arena battles use the individual Pokemon speed for the qualifying rounds
+      and the combined speed of all 3 Pokemon on a team for the championship rounds. You can bet on a player to gain gold if that player wins. The lower the odds of that player
+      winning, the greater the payout is much like in real life horse races. After Vanquisher War is completed for the day, the rewards are distributed based on ranking. Ranking
+      has tiebreakers. Whoever wins the finals match wins the entire tournament. After that the player with the most wins is the next in line. If two or more players are
+      tied, it goes to the player with the most points. Points are earned based off the damage dealt to enemies. You are able to exchange for rewards including Advance Potions.
+    </p>
+    <br>
+    <br>
+
+    <h3 id="guildWar">Guild War</h3>
+    <p>
+      Guild War is a competition that takes place across your entire server. Each guild can have as many members from it fight as they want. Depending on the day of the week,
+      there are restrictions as to which Pokemon can participate. Some days are attack only, some defense only, and some skill only. There are also some days where any Pokemon
+      is allowed to participate. You get two teams comprising of three Pokemon for most days. The pairings are randomly generated with players sometimes getting a bye. It is a
+      double elimination format meaning you have to lose twice ( once with each of your teams ). When a match is over, your future matches your Pokemon start at the same health
+      that they had remaining from the previous fight. Be the player who is the last one with a team remaining to win. Saturdays are the finals where you can bet on a guild to
+      win. Only the guilds who qualified can participate. There does need to be 8 guilds in order to have a finals for Guild War. Rewards are distributed after the tournament is
+      concluded. The most notable prizes include Advanced Potions and Gem Boxes. You can also get Dratini shards which are rare to get otherwise.
+    </p>
+    <br>
+    <br>
+
+    <h3 id="x-serverVanquisherWar">X-Server Vanquisher War</h3>
+    <p>
+      X-Server Vanquisher War functions almost identically to Vanquisher War. The main difference is that the tournament is across multiple servers which will be listed.
+      It is much harder to qualify and win in x-server because there will be many more players in these tournaments. Sometimes you can get a lucky schedule and not face
+      players that are active or who have low power. This does become a double-edge sword though because you might not be able to do enough damage to get to the final
+      rounds. You do not lose automatically after 3 losses which is a major difference compared to regular vanquisher. The prizes include talent point boxes and
+      some credit 16 Pokemon. It generally is not worth it to exchange for the random Articuno / Zapdos / Moltres shard.
+    </p>
+    <br>
+    <br>
+
+    <h3 id="x-serverMineWar">X-Server Mine War</h3>
+    <p>
+      X-Server Mine War is a competition between 4 servers. Each rank provides a certain number of points with the higher rankings providing the most points. Higher rankings
+      also enable you to gain more Ore quickly. You are able to attack players up to 3 times for free each day of the Server Mine War. If your power is lower than theirs, they
+      aren't on the same server as you, and are a higher rank, you are able to gain Ore if you win. Up to 80,000 Ore can be obtained in a single attack. At the end of each day you
+      will receive Ore based on your position. At the end of the event, players will receive Ore based on the rank their server had in the competition. The most valuable item in
+      the shop is the Golden PokeBall Selection. This rare item allows you to get one Golden Pokemon for use in the Pokemon Gallery.
+    </p>
+    <br>
+    <br>
+
+    <h3 id="championTrial">Champion Trial</h3>
+    <p>
+      Champion Trial is the ultimate test of strength, speed, and team building. It begins on Mondays where a select group of servers are competing to get the best rank.
+      You are able to command 3 teams of 6 Pokemon. You must win a battle with at least 2 of your teams to gain points. If you win, you gain points; if you lose, you lose points.
+      Other players are able to attack you and based on the results, your points can fluctuate. The rating system using an ELO type of system which basically means that high
+      points players gain few points if they win against a player with low rating. If you have played Pokemon Showdown or played in official Pokemon Tournaments, it is the same
+      type of system at work. The K value is rather small for these battles. It is rare for a match to award more than 20 points to a player when they win. You can have a maximum
+      of 12 attacks at any one time. When you are not at the maximum number of attacks, you can get one attack back per hour. When you choose to fight, you will see up to 3
+      opponents. If you don't like any of them, you can refresh it to try fighting someone else. Keep in mind that if you are in 4th place or higher, it is fixed who you can fight.
+    </p>
+    <br>
+
+    <p>You qualify for the finals by being in the top 10 from your group of servers in the preliminary round. The preliminaries end on Wednesday when the World Boss appears.
+      There is a countdown timer that displays so you can keep an eye on how much time is remaining. The finals takes place across all servers where you will see players
+      such as MKappa, Latios, and Jeff who all hold immense CR teams. On Fridays you are able to place a bet on the winner and can get 500 diamonds if you are correct.
+      One thing to keep in mind is that the final minutes of the finals are vicious where most players use their attacks. We are trying to figure out a solution to make things
+      better for everyone and pass it along to devs because if a player is not available shortly before the end of the event, their ranking can suffer greatly. The shop
+      contains very nice items including shards of some credit 17 Pokemon and some Awaken Weapons. If you need to star-up credit 16 Pokemon, you can easily do that in this shop
+      as well.</p>
+    <br>
+    <br>
+
+    <h3 id="squadArena">Squad Arena</h3>
+    <p>
+      Squad Arena lets you partner with 2 other people on your server to form a team. Each player on the team submits a team of 6 Pokemon. This competition takes place across
+      multiple servers. Sometimes you will be lucky and be the lowest number server and other times you will be near the high end. In any case, the team leader can attack other
+      teams. A battle is decided by a team getting 2 victories. The Squad Arena uses an ELO system just like for Champion Trial. Teams are formed on Tuesdays and the tournament
+      ends on Thursdays at midnight central time. Like Champion Trial, each team has a stamina counter for how many attacks they can do that has a maximum of 12 and regenerates
+      1 per hour if it is not at the max. The squad with the most points is the winner. Prizes are awarded based on placement. This will generally be your biggest source of
+      champion arena coins.
+    </p>
+
+  </div>
+
+  <div id="hyperEvolvePage" *ngIf="activeGuide == 'hyper evolve'">
+    <h2>Hyper Evolve</h2>
+    <br>
+
+    <p>Hyper evolving makes your Pokemon stronger by increasing its stats. When you get a hyper evolve level to 10, you can get a bonus. Hyper 1 increases your Pokemon's
+      base attack by 5%. Hyper 2 increases one of the Pokemon's passive skills. Hyper 3 increases the chance of using a skill attack instead of a normal attack by 6%.
+      Hyper 4 makes your skill attack better. Hyper 5 increases your max hp by 20%. Finally, Hyper 6 makes your ultimate skill stronger.</p>
+    <br>
+
+    <p>Each Hyper Evolve level has specific requirements. Hyper 1 requires the Pokemon advance rank to be orange +1 which is level 73. The Pokemon is required to have 40
+      spirit. Each spirit can be up to level 20. The Pokemon is also required to be 5* or higher. Hyper 2 requires Hyper 1 be at a certain progress, your gear awaken stars to
+      be 10 or higher, and the crystal level to be 600 or higher. You will have to manually check your crystal level by going under Growth and selecting Time Crystal. Hyper 3
+      requires orange +2 rank, spirit level 60 or higher, and Hyper 2 level 8 or higher. Hyper 4 requires Hyper 3 at level 8 or higher, the Pokemon to be at 6* or higher, and
+      3 specific Pokemon to reach advance rank purple +3. Hyper 5 requires orange +3, Hyper 4 fully completed, and those 3 specific Pokemon to have Hyper 2 unlocked. Finally,
+      Hyper 6 has the strictest requirements. It requires completion of Hyper 5, all time crystals equipped to that Pokemon must be purple, orange, or red and their level has
+      to add up to 12 or higher. This means each crystal will need to average around level 65.
+    </p>
+    <br>
+
+    <p>All hyper evolve levels will require shards of that Pokemon; the lower hyper levels require less. Hyper 6 takes around 70 shards. You will also need gold and
+      awaken alloys for each of them. You will also need a copy of that Pokemon's evolve gem and badge. Hyper 6 requires a copy of that Pokemon's exclusive awaken
+      weapon. This can sometimes be easier by demoting your weapon to a lower star since you'll get the materials back from it and the increase you'll get from Hyper 6
+      far outweighs the extra star on the weapon.</p>
+  </div>
+
+  <div id="quenchPage" *ngIf="activeGuide == 'quench'">
+    <h2>Quench Guide</h2>
+    <p>Quenching is unlocked by making a gear 5 star. This will require a total of 62 awaken alloys ( 2 + 4 + 8 + 16 + 32). For weapons, badges, and evolve gems, you will
+      need a total of 8 of them to get it unlocked ( 1 + 1 + 2 + 2 + 2 ). Quenching not only provides a base bonus just by leveling it up, but also provides special effects.
+      Each piece of gear can be quenched up to level 15. Every 3 levels the gear will gain a new effect until it has a total of 3 effects. After that, each additional 3 levels
+      will increase one of the effects to the next level. When the gear is quenched to level 15, it can have a total of 6 for effect levels. This can be 1, 1, 4; 1, 2, 3;
+      or 2, 2, 2. One of the most useful things about quenching is to gain initial rage because if you can get the Pokemon's initial rage to 1000, it is able to Ultimate
+      on its first turn. If you don't like the effects you got, you can use replacement stones to try for a new set of abilities. If you did not lock an effect, you can
+      only get one effect of that type. If you do use a locking stone for one effect, it is possible that using a replacement stone you can get the same effect again.
+      This is what some people do to try and get 2 sets of initial rage.</p>
+    <br>
+
+    <p>Each Pokemon is different so there is no one-size-fits-all approach for quenching. If the Pokemon has 1000 rage already, you should aim for damage bonus, damage
+      reduction, and block bonus. Damage bonus will provide the most CR, although defensive Pokemon do not gain as much benefit from it. Defensive Pokemon should try hard for
+      damage reduction and block bonus. Attacking Pokemon gain from offensive stats. Percentages are always better than numeric values since their increase is directly related
+      to how strong the particular stat is.</p>
+    <br>
+
+    <p>Leveling up quenching will require specific items based on the gear you are going to quench. There is also a selection box that lets you pick which kind of
+      gear quenching item you need. This item is a daily top-up reward for those who are VIP. You can also purchase the quenching items on specific days and also during
+      the league assembled event. It takes close to 400 quench items to reach level 15.</p>
+  </div>
+
+</div><!-- Ends GuidePage div -->
