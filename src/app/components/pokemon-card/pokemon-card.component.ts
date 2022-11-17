@@ -24,6 +24,14 @@ export class PokemonCardComponent implements OnInit {
     if(!this.pokemon.evolve_gem) {
       this.pokemon.evolve_gem = this.pokemon.evolveGem;
     }
+
+    if(!this.pokemon.spirit_id) {
+      this.pokemon.spirit_id = this.pokemon.spiritId;
+    }
+
+    if(!this.pokemon.tier_id) {
+      this.pokemon.tier_id = this.pokemon.tierId;
+    }
   }
 
 }

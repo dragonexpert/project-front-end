@@ -12,6 +12,7 @@ export class AuthService {
   admin: boolean = false;
   baseUrl: string = `${environment.baseUrl}/user`;
   username: string = "";
+  admin_token: string = "";
 
   constructor(private http: HttpClient) { }
 
@@ -25,6 +26,7 @@ export class AuthService {
     this.admin = false;
     this.username = "";
     this.userId = 0;
+    this.admin_token = "";
   }
 
   changePassword(username: string, currentPassword: string, newPassword: string, confirmPassword: string) {

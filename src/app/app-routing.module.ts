@@ -25,6 +25,8 @@ import {TierComponent} from "./components/tier/tier.component";
 import {SpiritComponent} from "./components/spirit/spirit.component";
 import {SingleGemComponent} from "./components/single-gem/single-gem.component";
 import {SinglePokemonComponent} from "./components/single-pokemon/single-pokemon.component";
+import {UpdateAccountComponent} from "./components/update-account/update-account.component";
+import {ProfileComponent} from "./components/profile/profile.component";
 
 const routes: Routes = [
   { path: "", component: BaseComponent},
@@ -32,6 +34,7 @@ const routes: Routes = [
   { path: "register", component: RegisterComponent, canActivate: [LogoutGuard]},
   { path: "logout", component: LogoutComponent, canActivate: [UserGuard]},
   { path: "account", component: AccountComponent, canActivate: [UserGuard]},
+  { path: "account/update/:id", component: UpdateAccountComponent, canActivate: [UserGuard]},
   { path: "faq", component: FaqComponent},
   { path: "guides", component: GuidesComponent},
   { path: "future", component: FutureComponent},
@@ -48,7 +51,8 @@ const routes: Routes = [
   { path: "admin", component: AdminComponent, canActivate: [AdminGuard]},
   { path: "changepassword", component: ChangePasswordComponent, canActivate: [UserGuard]},
   { path: "tier", component: TierComponent},
-  { path: "spirit", component: SpiritComponent}
+  { path: "spirit", component: SpiritComponent},
+  { path: "user/:name", component: ProfileComponent}
 ]
 
 @NgModule({

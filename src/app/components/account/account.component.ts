@@ -11,7 +11,8 @@ import {Account} from "../../models/account";
 })
 export class AccountComponent implements OnInit {
 
-  constructor(private accountService: AccountService, private authService: AuthService, private router: Router) { }
+  constructor(private accountService: AccountService, private authService: AuthService, private router: Router) {
+  }
 
   allAccounts!: Account[];
   noAccounts: boolean = false;
@@ -29,5 +30,4 @@ export class AccountComponent implements OnInit {
       () => console.log("Loaded all accounts")
     )
   }
-
 }

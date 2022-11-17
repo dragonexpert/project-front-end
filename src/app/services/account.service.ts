@@ -21,4 +21,13 @@ export class AccountService {
   getRankings(page: number) {
     return this.http.get<Ranking[]>(`${this.baseUrl}/ranking?page=${page}`, {headers: environment.headers, withCredentials: environment.withCredentials});
   }
+
+  // Pass an object to it
+  updateAccount(account: any) {
+    const payload = JSON.stringify(account);
+    return this.http.put<any>(`${this.baseUrl}/update`, payload, {
+      headers: environment.headers,
+      withCredentials: environment.withCredentials
+    });
+  }
 }
