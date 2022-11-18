@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Donation} from "../../models/donation";
+import {DonationService} from "../../services/donation.service";
 
 @Component({
   selector: 'app-donations',
@@ -7,10 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DonationsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private donationService: DonationService) { }
+
+  allDonations!: Donation[];
 
   ngOnInit(): void {
+    this.getDonations();
   }
 
-  // Need to create an endpoint in the Java application for fetching donors if I want this to update automatically.
+  getDonations() {
+    this.donationService.getDonations().subscribe(
+      (response) => this.allDonations = response,
+      (error) => console.error(error),
+      () => console.log("Fetching donations")
+    );
+  }
 }

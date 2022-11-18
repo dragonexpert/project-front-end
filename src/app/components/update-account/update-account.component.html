@@ -1,1 +1,33 @@
-<p>update-account works!</p>
+<app-navbar></app-navbar>
+<br>
+<div id="accountInfo">
+  <div *ngIf="error" class="alert alert-danger">One or more required fields have not been filled out.</div>
+  <div *ngIf="updated" class="alert alert-success">Your account information has been updated.</div>
+  <form id="accountInfo-form" [formGroup]="updateForm">
+    <div class="row">
+      <label for="accountName" class="col-2">Account Name*</label>
+      <input type="text" class="col-2" name="username" id="accountName" formControlName="accountName">
+    </div>
+    <div class="row">
+      <label for="accountServer" class="col-2">Server*</label>
+      <input type="text" class="col-2" name="accountServer" id="accountServer" formControlName="accountServer">
+    </div>
+    <div class="row">
+      <label for="accountVip" class="col-2">VIP</label>
+      <input type="number" class="col-2" name="accountVip" id="accountVip" formControlName="accountVip" min="0" max="18" step="1">
+    </div>
+    <div class="row">
+      <label for="cr" class="col-2">CR*</label>
+      <input type="number" class="col-2" name="cr" id="cr" formControlName="cr" min="0" step="1000">
+    </div>
+    <div class="row">
+      <label for="speed" class="col-2">Speed*</label>
+      <input type="number" class="col-2" name="speed" id="speed" formControlName="speed" min="0" step="1">
+    </div>
+    <div class="row">
+      <button class="col-1" (click)="resetForm()">Reset</button>
+      <div class="col-1"></div>
+      <button class="col-1" (click)="updateAccount()">Submit</button>
+    </div>
+  </form>
+</div>

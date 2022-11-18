@@ -38,7 +38,7 @@ import { SinglePokemonComponent } from './components/single-pokemon/single-pokem
 import { SpiritCardComponent } from './components/spirit-card/spirit-card.component';
 import { SocialMediaCardComponent } from './components/social-media-card/social-media-card.component';
 import { GalleryBonusCardComponent } from './components/gallery-bonus-card/gallery-bonus-card.component';
-import { UpdateAccountComponent } from './components/update-account/update-account.component';
+import { UpdateAccountComponent} from "./components/update-account/update-account.component";
 import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({

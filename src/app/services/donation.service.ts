@@ -12,6 +12,8 @@ export class DonationService {
 
   private baseUrl: string = `${environment.baseUrl}/donation`;
 
+  private testUrl: string = `http://localhost:8080/donation`;
+
   getDonations() {
     return this.http.get<Donation[]>(`${this.baseUrl}/`, {headers: environment.headers, withCredentials: environment.withCredentials});
   }

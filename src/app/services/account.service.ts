@@ -14,8 +14,14 @@ export class AccountService {
 
   baseUrl: string = `${environment.baseUrl}/account`;
 
+  testUrl: string = `http://localhost:8080/account`;
+
   getMyAccounts() {
     return this.http.get<Account[]>(`${this.baseUrl}/me/${this.authService.userId}`, { headers: environment.headers, withCredentials: environment.withCredentials});
+  }
+
+  getAccountById(id: number) {
+    return this.http.get<Account>(`${this.baseUrl}/${id}`, {headers: environment.headers, withCredentials: environment.withCredentials});
   }
 
   getRankings(page: number) {
@@ -25,9 +31,14 @@ export class AccountService {
   // Pass an object to it
   updateAccount(account: any) {
     const payload = JSON.stringify(account);
-    return this.http.put<any>(`${this.baseUrl}/update`, payload, {
+    console.log(payload);
+    return this.http.put<Account>(`${this.baseUrl}/update`, payload, {
       headers: environment.headers,
       withCredentials: environment.withCredentials
     });
+  }
+
+  getProfileByAccountName(username: string) {
+    return this.http.get<Account>(`${this.baseUrl}/user?username=${username}`, {headers: environment.headers, withCredentials: environment.withCredentials});
   }
 }

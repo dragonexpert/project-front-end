@@ -1,16 +1,16 @@
 export class Account {
-  id: number;
-  accountName: string;
-  cr: number;
-  accountServer: string;
-  accountVip: number;
-  speed: number;
-  avatar: string;
-  signature: string;
-  team: string;
-  usertitle: string;
-  admin: boolean;
-  dateRegister: string;
+   id: number;
+   accountName: string;
+   cr: number;
+   accountServer: string;
+   accountVip: number;
+   speed: number;
+   avatar: string;
+   signature: string;
+   team: string;
+   usertitle: string;
+   admin: boolean;
+   dateRegister: string;
 
   constructor(id: number, accountName: string, cr: number, accountServer: string, accountVip: number, speed: number,
               avatar: string, signature: string, team: string, usertitle: string, admin: boolean, dateRegister: string) {

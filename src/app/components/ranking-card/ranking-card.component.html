@@ -1,6 +1,6 @@
 <td>{{ rank }}</td>
-<td><span class="admin" *ngIf="ranking.admin">{{ ranking.accountName }}</span>
-<span *ngIf="!ranking.admin">{{ ranking.accountName }}</span></td>
+<td><a [routerLink]="['/user', ranking.accountName]"><span class="admin" *ngIf="ranking.admin">{{ ranking.accountName }}</span>
+<span *ngIf="!ranking.admin">{{ ranking.accountName }}</span></a></td>
 <td>{{ ranking.cr | number }}</td>
 <td>{{ ranking.speed | number }}</td>
 <td>{{ ranking.accountServer }}</td>

@@ -1,1 +1,38 @@
-<p>profile works!</p>
+<app-navbar></app-navbar>
+<br>
+<div class="col-lg-6 col-sm-8 border-left" style="border:1px solid white">
+    <h2 id="username">
+      <span *ngIf="userProfile.admin" class="admin">{{ userProfile.accountName }}</span>
+      <span *ngIf="!userProfile.admin">{{ userProfile.accountName }}</span>
+    </h2>
+  <div id="usertitle" class="">{{ userProfile.usertitle }}</div>
+  <div class="row">
+    <div id="avatar" class="col-6">
+    <img *ngIf="userProfile.avatar" [src]="userProfile.avatar" [alt]="userProfile.avatar" height="128px" width="128px" />
+    </div>
+    <div id="team" class="col-6">Team
+      <ul *ngIf="userProfile.team">
+        <li *ngFor="let pkmn of teamMembers">
+          <a [routerLink]="['/pokemon/name/', pkmn]" class="text-light text-decoration-underline">{{ pkmn }}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div id="regDate" class="col-6">Registered: {{ userProfile.dateRegister }}</div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-6">CR: {{ userProfile.cr | number }}</div>
+    <div class="col-6">Speed: {{ userProfile.speed | number }}</div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-6">VIP: {{ userProfile.accountVip }}</div>
+    <div class="col-6">Server: {{ userProfile.accountServer }}</div>
+  </div>
+  <hr>
+  <div class="row" id="signature">
+    <div class="col-12 text-center">{{ userProfile.signature }}</div>
+  </div>
+</div>

@@ -18,7 +18,7 @@
     <td> {{ account.accountServer }}</td>
     <td> {{ account.accountVip }}</td>
     <td> {{ account.speed | number }}</td>
-    <td>In progress</td>
+    <td><a [routerLink]="['update/', account.id]">Update</a></td>
   </tr>
   </tbody>
 </table>

@@ -17,9 +17,9 @@
     </tr>
     </thead>
     <tbody>
-    <tr>
-      <td>Denim</td>
-      <td>2022-11-16</td>
+    <tr *ngFor="let donation of allDonations">
+      <td>{{ donation.username }}</td>
+      <td>{{ donation.date }}</td>
     </tr>
     </tbody>
   </table>
