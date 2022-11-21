@@ -30,4 +30,12 @@ export class AccountComponent implements OnInit {
       () => console.log("Loaded all accounts")
     )
   }
+
+  addAccountButton() {
+    this.router.navigate(['/account/add']);
+  }
+
+  deleteAccount(id: number) {
+   this.router.navigate(['/account/delete/', id]);
+  }
 }

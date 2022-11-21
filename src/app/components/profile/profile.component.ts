@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AccountService} from "../../services/account.service";
-import {Account} from "../../models/account";
 import {ActivatedRoute} from "@angular/router";
+import {Profile} from "../../models/profile";
 
 @Component({
   selector: 'app-profile',
@@ -12,7 +12,7 @@ export class ProfileComponent implements OnInit {
 
   constructor(private accountService: AccountService,private route: ActivatedRoute) { }
 
-  userProfile!: Account;
+  userProfile!: Profile;
   teamMembers!: any;
 
   ngOnInit(): void {

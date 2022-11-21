@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Gallery} from "../../models/gallery";
 import {GalleryBonus} from "../../models/gallery-bonus";
 import {GalleryService} from "../../services/gallery.service";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-gallery',
@@ -10,7 +11,7 @@ import {GalleryService} from "../../services/gallery.service";
 })
 export class GalleryComponent implements OnInit {
 
-  constructor(private galleryService: GalleryService) { }
+  constructor(private galleryService: GalleryService, private route: ActivatedRoute) { }
 
   allgalleries!: Gallery[];
   allBonuses!: GalleryBonus[];
@@ -20,6 +21,11 @@ export class GalleryComponent implements OnInit {
   ngOnInit(): void {
     this.getGalleries();
     this.getGalleryBonuses();
+    let page = this.route.snapshot.paramMap.get('bonus');
+    if(page)
+    {
+      this.activePage = page;
+    }
   }
 
 

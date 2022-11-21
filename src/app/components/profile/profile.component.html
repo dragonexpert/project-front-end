@@ -8,8 +8,10 @@
   <div id="usertitle" class="">{{ userProfile.usertitle }}</div>
   <div class="row">
     <div id="avatar" class="col-6">
-    <img *ngIf="userProfile.avatar" [src]="userProfile.avatar" [alt]="userProfile.avatar" height="128px" width="128px" />
-    </div>
+      <img *ngIf="userProfile.avatar" [src]="userProfile.avatar" [alt]="userProfile.avatar" height="128px" width="128px" />
+      <br>
+      <br>
+      Registered: {{ userProfile.dateRegister }}</div>
     <div id="team" class="col-6">Team
       <ul *ngIf="userProfile.team">
         <li *ngFor="let pkmn of teamMembers">
@@ -18,13 +20,15 @@
       </ul>
     </div>
   </div>
-  <div class="row">
-    <div id="regDate" class="col-6">Registered: {{ userProfile.dateRegister }}</div>
-  </div>
   <hr>
   <div class="row">
     <div class="col-6">CR: {{ userProfile.cr | number }}</div>
     <div class="col-6">Speed: {{ userProfile.speed | number }}</div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-6">CR Rank: {{ userProfile.rankCr }}</div>
+    <div class="col-6">Speed Rank: {{ userProfile.rankSpeed }}</div>
   </div>
   <hr>
   <div class="row">
@@ -33,6 +37,7 @@
   </div>
   <hr>
   <div class="row" id="signature">
-    <div class="col-12 text-center">{{ userProfile.signature }}</div>
+    <div class="col-12 text-center" *ngIf="userProfile.signature">{{ userProfile.signature }}</div>
+    <div class="col-12" *ngIf="!userProfile.signature"><br></div>
   </div>
 </div>

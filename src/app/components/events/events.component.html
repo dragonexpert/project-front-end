@@ -18,7 +18,11 @@
         <td>{{ currentEvent.id }}</td>
         <td><a (click)="singleEventPage(currentEvent.eventName)" class="text-decoration-underline" style="cursor: pointer">{{ currentEvent.eventName }}</a></td>
         <td>{{ currentEvent.eventDate }}</td>
-        <td>{{ currentEvent.pokemon | capitalization }}</td>
+        <td>
+          <div *ngIf="currentEvent.pokemon">
+            <a [routerLink]="['/pokemon/name/', currentEvent.pokemon]" class="text-decoration-underline" style="cursor: pointer">{{ currentEvent.pokemon | capitalization }}</a>
+          </div>
+        </td>
       </tr>
     </tbody>
   </table>

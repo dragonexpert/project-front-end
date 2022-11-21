@@ -16,11 +16,6 @@ export class CodeService {
     return this.http.get<Code[]>(`${this.baseUrl}/`, {headers: environment.headers, withCredentials: environment.withCredentials});
   }
 
-  // Future feature
-  addCode(code: string, diamonds: number, expires: string, vipRequired: number) {
-    const payload = {"code": code, "diamonds": diamonds, "vipRequired": vipRequired, "expires": expires};
-    return this.http.put<any>(`${this.baseUrl}/add`, payload, {headers: environment.headers, withCredentials: environment.withCredentials});
-  }
 
   // Future feature
   deleteCode(id: number) {

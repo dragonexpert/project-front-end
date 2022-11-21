@@ -11,10 +11,16 @@
       <th scope="col">Attack</th>
       <th scope="col">Defense</th>
       <th scope="col">HP</th>
-      <th scope="col">Bonus</th>
-      <th scope="col">Bonus Value</th>
-      <th scope="col">Trait</th>
-      <th scope="col">Trait Value</th>
+      <th scope="col" *ngIf="page == 'normalGems'">Bonus</th>
+      <th scope="col" *ngIf="page == 'normalGems'">Bonus Value</th>
+      <th scope="col">
+        <div *ngIf="page == 'normalGems'">Trait</div>
+        <div *ngIf="page == 'exclusiveGems'">Pokemon</div>
+      </th>
+      <th scope="col">
+        <div *ngIf="page == 'normalGems'">Trait Value</div>
+        <div *ngIf="page == 'exclusiveGems'">Description</div>
+      </th>
     </tr>
   </thead>
   <tbody *ngIf="page == 'normalGems'">

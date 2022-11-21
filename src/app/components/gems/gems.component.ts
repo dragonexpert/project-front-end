@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Gem} from "../../models/gem";
 import {GemService} from "../../services/gem.service";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-gems',
@@ -9,7 +10,7 @@ import {GemService} from "../../services/gem.service";
 })
 export class GemsComponent implements OnInit {
 
-  constructor(private gemService: GemService) { }
+  constructor(private gemService: GemService, private route: ActivatedRoute) { }
 
   page!: string;
   normalGems!: Gem[];
@@ -17,6 +18,11 @@ export class GemsComponent implements OnInit {
 
   ngOnInit(): void {
     this.page = 'normalGems';
+    let exclusive = this.route.snapshot.paramMap.get('exclusive');
+    if(exclusive)
+    {
+      this.page = 'exclusiveGems';
+    }
     this.getNormalGems();
     this.getExclusiveGems()
   }

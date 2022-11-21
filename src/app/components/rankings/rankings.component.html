@@ -1,17 +1,31 @@
 <app-navbar></app-navbar>
+<br>
+<span id="currentPageTop">Page: {{page}}</span>
+<br>
+<br>
 <table class="table table-info table-bordered">
   <thead>
     <tr>
       <th scope="col">Ranking</th>
-      <th scope="col">Account Name</th>
-      <th scope="col">CR</th>
-      <th scope="col">Speed</th>
+      <th scope="col" (click)="loadRankingsByName(1)" class="text-decoration-underline" style="cursor: pointer">Account Name</th>
+      <th scope="col" (click)="loadRankings(1)" class="text-decoration-underline" style="cursor: pointer">CR</th>
+      <th scope="col" (click)="loadRankingsBySpeed(1)" class="text-decoration-underline" style="cursor: pointer">Speed</th>
       <th scope="col">Server</th>
-      <th scope="col">VIP Level</th>
+      <th scope="col" (click)="loadRankingsByVip(1)" class="text-decoration-underline" style="cursor: pointer">VIP Level</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let ranking of allRankings; let indexOfElement=index" app-ranking-card [ranking]="ranking" [page]="page" [rank]="indexOfElement">
+    <tr *ngFor="let ranking of allRankings; let indexOfElement=index" app-ranking-card [ranking]="ranking" [page]="page" [rank]="page * 50 - 50 + indexOfElement">
     </tr>
   </tbody>
 </table>
+<br>
+<span id="currentPageBottom">Page: {{page}}</span>
+<br>
+<div class="row">
+  <button *ngIf="page > 2" (click)="prepareReload(1)" class="col-1">Page 1</button>
+  <div class="col-1" *ngIf="page > 2"></div>
+  <button *ngIf="page > 1" (click)="prepareReload(page - 1)" class="col-1">Page {{ page - 1}}</button>
+  <div class="col-1"></div>
+  <button *ngIf="allRankings.length == 50" (click)="prepareReload(page + 1)" class="col-1">Page {{ page + 1}}</button>
+</div>

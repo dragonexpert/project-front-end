@@ -25,7 +25,7 @@ export class SpiritFormatterPipe implements PipeTransform {
       case 8:
         return "Windy of Singing";
       case 9:
-        return "Fighting Heaert";
+        return "Fighting Heart";
       default:
         return "Error Heart (" + value + ")";
     }

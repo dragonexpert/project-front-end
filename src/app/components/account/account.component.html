@@ -7,7 +7,7 @@
       <th scope="col">Server</th>
       <th scope="col">VIP Level</th>
       <th scope="col">Speed</th>
-      <th scope="col">Modify</th>
+      <th colspan="2" scope="col">Modify</th>
     </tr>
   </thead>
   <tbody>
@@ -19,6 +19,8 @@
     <td> {{ account.accountVip }}</td>
     <td> {{ account.speed | number }}</td>
     <td><a [routerLink]="['update/', account.id]">Update</a></td>
+    <td><a [routerLink]="['delete/', account.id]" class="alert-danger">Delete</a></td>
   </tr>
   </tbody>
 </table>
+<button class="btn btn-primary" (click)="addAccountButton()">Add Account</button>

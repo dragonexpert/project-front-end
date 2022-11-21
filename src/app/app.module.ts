@@ -40,6 +40,14 @@ import { SocialMediaCardComponent } from './components/social-media-card/social-
 import { GalleryBonusCardComponent } from './components/gallery-bonus-card/gallery-bonus-card.component';
 import { UpdateAccountComponent} from "./components/update-account/update-account.component";
 import { ProfileComponent } from './components/profile/profile.component';
+import { AddAccountComponent } from './components/add-account/add-account.component';
+import { DeleteAccountComponent } from './components/delete-account/delete-account.component';
+import { AdminCodeComponent } from './components/admin-code/admin-code.component';
+import { GuidesGrowthComponent } from './components/guides-growth/guides-growth.component';
+import { GuidesAdventureComponent } from './components/guides-adventure/guides-adventure.component';
+import { GuidesArenaComponent } from './components/guides-arena/guides-arena.component';
+import { GuidesHyperEvolveComponent } from './components/guides-hyper-evolve/guides-hyper-evolve.component';
+import { GuidesQuenchComponent } from './components/guides-quench/guides-quench.component';
 
 @NgModule({
   declarations: [
@@ -79,7 +87,15 @@ import { ProfileComponent } from './components/profile/profile.component';
     SocialMediaCardComponent,
     GalleryBonusCardComponent,
     UpdateAccountComponent,
-    ProfileComponent
+    ProfileComponent,
+    AddAccountComponent,
+    DeleteAccountComponent,
+    AdminCodeComponent,
+    GuidesGrowthComponent,
+    GuidesAdventureComponent,
+    GuidesArenaComponent,
+    GuidesHyperEvolveComponent,
+    GuidesQuenchComponent
   ],
   imports: [
     BrowserModule,

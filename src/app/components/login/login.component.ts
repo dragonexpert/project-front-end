@@ -39,9 +39,9 @@ export class LoginComponent implements OnInit {
           this.authService.userId = response.id;
           this.authService.username = response.username;
           this.authService.admin = response.admin;
-          if(response.hasOwnProperty("admin_token"))
+          if(response.hasOwnProperty("admin_token_string"))
           {
-            this.authService.admin_token = response.admin_token;
+            this.authService.admin_token = response.admin_token_string;
           }
           this.user = response;
         },

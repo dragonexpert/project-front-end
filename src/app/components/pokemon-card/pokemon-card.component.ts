@@ -32,6 +32,10 @@ export class PokemonCardComponent implements OnInit {
     if(!this.pokemon.tier_id) {
       this.pokemon.tier_id = this.pokemon.tierId;
     }
+
+    if(!this.pokemon.custom_gem_id) {
+      this.pokemon.custom_gem_id = this.pokemon.customGemId;
+    }
   }
 
 }

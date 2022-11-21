@@ -13,9 +13,11 @@ export class Pokemon {
   evolveGem!: string;
   food: string;
   custom_gem_id: number;
+  customGemId: number;
 
 
-  constructor(name: string, pokemon_id: number, type: string, tier_id: number, weapon: string, badge: string, spirit_id: number, evolve_gem: string, food: string, custom_gem_id: number, evolveGem: string, pokemonId: number, tierId: number, spiritId: number) {
+  constructor(name: string, pokemon_id: number, type: string, tier_id: number, weapon: string, badge: string, spirit_id: number, evolve_gem: string,
+              food: string, custom_gem_id: number, evolveGem: string, pokemonId: number, tierId: number, spiritId: number, customGemId: number) {
     this.name = name;
     this.pokemon_id = pokemon_id;
     this.pokemonId = pokemonId;
@@ -30,5 +32,10 @@ export class Pokemon {
     this.evolveGem = evolveGem;
     this.food = food;
     this.custom_gem_id = custom_gem_id;
+    if(customGemId)
+    {
+      this.custom_gem_id = customGemId;
+    }
+    this.customGemId = customGemId;
   }
 }

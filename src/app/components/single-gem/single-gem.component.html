@@ -7,10 +7,16 @@
     <th scope="col">Attack</th>
     <th scope="col">Defense</th>
     <th scope="col">HP</th>
-    <th scope="col">Bonus</th>
-    <th scope="col">Bonus Value</th>
-    <th scope="col">Trait</th>
-    <th scope="col">Trait Value</th>
+    <th scope="col" *ngIf="!exclusive">Bonus</th>
+    <th scope="col" *ngIf="!exclusive">Bonus Value</th>
+    <th scope="col">
+      <div *ngIf="exclusive">Pokemon</div>
+      <div *ngIf="!exclusive">Trait</div>
+    </th>
+    <th scope="col">
+      <div *ngIf="exclusive">Description</div>
+      <div *ngIf="!exclusive">Trait Value</div>
+    </th>
   </tr>
   </thead>
   <tbody>
@@ -20,12 +26,14 @@
     <td>{{ singleGem.attack}}</td>
     <td>{{ singleGem.defense}}</td>
     <td>{{ singleGem.hp}}</td>
-    <td>{{ singleGem.bonus}}</td>
+    <td *ngIf="!exclusive">{{ singleGem.bonus}}</td>
     <td *ngIf="singleGem.bonusValue">{{ singleGem.bonusValue}}</td>
-    <td *ngIf="!singleGem.bonusValue"></td>
-    <td *ngIf="exclusive"><a [routerLink]="['/pokemon/name', singleGem.trait]" class="text-decoration-underline">{{ singleGem.trait | capitalization }}</a></td>
+    <td *ngIf="exclusive">
+      <a [routerLink]="['/pokemon/name', singleGem.trait]" class="text-decoration-underline">{{ singleGem.trait | capitalization }}</a>
+    </td>
     <td *ngIf="!exclusive">{{ singleGem.trait | capitalization }}</td>
-    <td>{{ singleGem.traitValue}}</td>
+    <td *ngIf="!exclusive">{{ singleGem.traitValue}}</td>
+    <td *ngIf="exclusive"> {{ singleGem.description }}</td>
   </tr>
   </tbody>
 </table>

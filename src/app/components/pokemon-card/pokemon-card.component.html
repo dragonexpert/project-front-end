@@ -1,10 +1,10 @@
 <td>{{ pokemon.pokemon_id }}</td>
 <td>{{ pokemon.name | capitalization }}</td>
-<td>{{ pokemon.tier_id | tierFormatter }}</td>
+<td><a [routerLink]="['/pokemon/tier/', pokemon.tier_id]" class="text-decoration-underline" style="cursor: pointer">{{ pokemon.tier_id | tierFormatter }}</a></td>
 <td>{{ pokemon.weapon }}</td>
-<td>{{ pokemon.badge }}</td>
-<td>{{ pokemon.evolve_gem}}</td>
-<td>{{ pokemon.type | capitalization }}</td>
-<td>{{ pokemon.spirit_id | spiritFormatter }}</td>
+<td><a [routerLink]="['/pokemon/badge/', pokemon.badge]" class="text-decoration-underline" style="cursor: pointer">{{ pokemon.badge }}</a></td>
+<td><a [routerLink]="['/pokemon/gem/', pokemon.evolve_gem]" class="text-decoration-underline" style="cursor: pointer">{{ pokemon.evolve_gem}}</a></td>
+<td><a [routerLink]="['/pokemon/type/', pokemon.type]" class="text-decoration-underline" style="cursor: pointer">{{ pokemon.type | capitalization }}</a></td>
+<td><a [routerLink]="['/pokemon/spirit/', pokemon.spirit_id]" class="text-decoration-underline" style="cursor: pointer">{{ pokemon.spirit_id | spiritFormatter }}</a></td>
 <td>{{ pokemon.food | capitalization }}</td>
-<td><a [routerLink]="['/gems/', pokemon.custom_gem_id]" class="text-decoration-underline">Gem Link</a></td>
+<td><a *ngIf="pokemon.custom_gem_id" [routerLink]="['/gems/', pokemon.custom_gem_id]" class="text-decoration-underline">Gem Link</a></td>

@@ -18,7 +18,8 @@ export class SingleGemComponent implements OnInit {
 
   ngOnInit(): void {
     this.exclusive = false;
-    this.route.params.subscribe((params) => this.getGemById(params['id']));
+    let id = Number(this.route.snapshot.paramMap.get('id'));
+    this.getGemById(id);
   }
 
 

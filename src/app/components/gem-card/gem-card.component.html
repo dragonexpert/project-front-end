@@ -3,10 +3,11 @@
 <td>{{ gem.attack }}</td>
 <td>{{ gem.defense }}</td>
 <td>{{ gem.hp }}</td>
-<td>{{ gem.bonus | capitalization }}</td>
+<td *ngIf="!exclusive">{{ gem.bonus | capitalization }}</td>
 <td *ngIf="gem.bonusValue">{{ gem.bonusValue}}</td>
-<td *ngIf="!gem.bonusValue"></td>
 <td *ngIf="exclusive"><a [routerLink]="['/pokemon/name', gem.trait]" class="text-decoration-underline">{{ gem.trait | capitalization }}</a></td>
 <td *ngIf="!exclusive">{{ gem.trait | capitalization }}</td>
-<td *ngIf="gem.traitValue">{{ gem.traitValue }}</td>
-<td *ngIf="!gem.traitValue"></td>
+<td>
+  <div *ngIf="gem.traitValue">{{ gem.traitValue }}</div>
+  <div *ngIf="!gem.traitValue">{{ gem.description }}</div>
+</td>

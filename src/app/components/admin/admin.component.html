@@ -1,2 +1,86 @@
 <app-navbar></app-navbar>
-<p>admin works!</p>
+<div id="adminTabs">
+  <button class="btn btn-primary" (click)="changePage('overview')">Overview</button>
+  <button class="btn btn-primary" (click)="changePage('events')">Event Management</button>
+  <button class="btn btn-primary" (click)="changePage('codes')">Code Management</button>
+  <button class="btn btn-primary" (click)="changePage('appinfo')">Application Info</button>
+</div>
+<br>
+<div *ngIf="activePage == 'overview'">
+  <h2>Overview</h2>
+  <br>
+  <h3>Admins</h3>
+    <div *ngFor="let admin of allAdmins">
+      <div class="row">
+        <div class="col-2">{{ admin.username }}</div>
+        <div class="col-2">{{ admin.date_register }}</div>
+        <div *ngIf="superAdmin" class="col-2">
+          <button class="btn btn-danger" (click)="deleteAdmin(admin.id)">Delete</button>
+        </div>
+      </div>
+    </div>
+</div>
+<br>
+
+<div *ngIf="activePage == 'events'">
+  <h3>Current Events</h3>
+  <div *ngIf="eventDeleted" class="alert alert-success">The event has been deleted.</div>
+  <table class="table table-info table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Event ID</th>
+        <th scope="col">Event Name</th>
+        <th scope="col">Event Date</th>
+        <th scope="col">Pokemon</th>
+        <th scope="col">Controls</th>
+      </tr>
+      <tr *ngFor="let currentEvent of allEvents">
+        <td>{{ currentEvent.id }}</td>
+        <td>{{ currentEvent.eventName }}</td>
+        <td>{{ currentEvent.eventDate }}</td>
+        <td>{{ currentEvent.pokemon | capitalization }}</td>
+        <td><div (click)="deleteEvent(currentEvent.id)" class="text-decoration-underline" style="cursor: pointer">Delete</div></td>
+      </tr>
+    </thead>
+  </table>
+  <br>
+  <h3>Add Event</h3>
+  <div *ngIf="success" class="alert alert-success">The event has been added</div>
+  <br>
+  <form id="addEventForm" [formGroup]="addEventForm">
+    <div class="row">
+      <label for="eventType" class="col-2">Event Type*</label>
+      <select id="eventType" class="col-2" formControlName="eventName">
+        <option *ngFor="let eventType of eventTypes" [value]="eventType.eventName">{{ eventType.eventName }}</option>
+      </select>
+    </div>
+    <div *ngIf="!dateValid" class="alert alert-danger">Invalid Date. Date format is YYYY-MM-DD</div>
+    <div class="row">
+      <label for="eventDate" class="col-2">Event Date*</label>
+      <input type="text" id="eventDate" class="col-2" formControlName="eventDate" />
+    </div>
+    <div class="row">
+      <label for="pokemon" class="col-2">Pokemon</label>
+      <input type="text" id="pokemon" class="col-2" formControlName="eventPokemon" />
+    </div>
+    <br>
+    <div class="row">
+      <button class="btn btn-primary col-1" (click)="resetForm()">Reset</button>
+      <div class="col-1"></div>
+      <button class="btn btn-primary col-1" (click)="addEvent()">Add Event</button>
+    </div>
+  </form>
+</div>
+
+<div *ngIf="activePage == 'appinfo'">
+  <h3>Application Info</h3>
+  <div>Backend Language: Java</div>
+  <div>Backend Build Version: 1.5.4</div>
+  <div>Backend Build Label: pikachuparadise-admin-1</div>
+  <div>Front End Language: Angular</div>
+  <div>Front End Build Version: 1.0.0</div>
+</div>
+
+<div *ngIf="activePage == 'codes'">
+  <app-admin-code></app-admin-code>
+</div>

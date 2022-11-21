@@ -1,0 +1,50 @@
+<div *ngIf="codeAdded" class="alert alert-success">The code has been added</div>
+<div *ngIf="codeDeleted" class="alert alert-success">The code has been deleted</div>
+<br>
+<table class="table table-info table-bordered">
+  <thead>
+  <tr>
+    <th scope="col">Code</th>
+    <th scope="col">VIP Required</th>
+    <th scope="col">Diamonds</th>
+    <th scope="col">Delete</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let code of allCodes">
+    <td>{{ code.code }}</td>
+    <td>{{ code.vipRequired }}</td>
+    <td>{{ code.diamonds }}</td>
+    <td>
+      <button class="btn btn-danger" (click)="deleteCodeById(code.id)">Delete Code</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+<br>
+<br>
+<h3>Add Code</h3>
+<br>
+<form id="addCodeForm" [formGroup]="codeForm">
+  <div class="row">
+    <label for="code" class="col-2">Code</label>
+    <input class="col-2" type="text" id="code" formControlName="code">
+  </div>
+  <div class="row">
+    <label for="vipRequired" class="col-2">VIP Required</label>
+    <input class="col-2" type="number" id="vipRequired" formControlName="vipRequired">
+  </div>
+  <div class="row">
+    <label for="expireDate" class="col-2">Expire Date</label>
+    <input class="col-2" type="text" id="expireDate" formControlName="expireDate">
+  </div>
+  <div class="row">
+    <label for="diamonds" class="col-2">Diamonds</label>
+    <input class="col-2" type="number" id="diamonds" formControlName="diamonds">
+  </div>
+  <div class="row">
+    <button class="btn btn-primary col-1" type="reset">Reset</button>
+    <div class="col-1"></div>
+    <button class="btn btn-primary col-1" (click)="addCode()">Submit</button>
+  </div>
+</form>

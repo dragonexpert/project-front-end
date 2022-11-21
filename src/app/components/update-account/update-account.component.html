@@ -24,6 +24,27 @@
       <label for="speed" class="col-2">Speed*</label>
       <input type="number" class="col-2" name="speed" id="speed" formControlName="speed" min="0" step="1">
     </div>
+    <div class="alert alert-danger" *ngIf="avatarError">Avatar url must start with https</div>
+    <div class="row">
+      <label for="avatar" class="col-2">Avatar Url</label>
+      <input type="text" id="avatar" formControlName="avatar" class="col-2">
+    </div>
+    <div class="row">
+      <label for="usertitle" class="col-2">User Title</label>
+      <input type="text" class="col-2" id="usertitle" formControlName="usertitle" maxlength="30">
+    </div>
+    <div class="row">
+      <label for="signature" class="col-2">Signature</label>
+      <input type="text" id="signature" class="col-2" formControlName="signature" maxlength="255">
+    </div>
+    <br>
+    <div>Team is your main 6 Pokemon. Separate each Pokemon with a comma, do not use extra spaces. Pokemon names should be hyphenated if they have spaces. Example: ash-greninja.</div>
+    <br>
+    <div class="row">
+      <label for="team" class="col-2">Team</label>
+      <input type="text" id="team" class="col-2" formControlName="team">
+    </div>
+    <br>
     <div class="row">
       <button class="col-1" (click)="resetForm()">Reset</button>
       <div class="col-1"></div>

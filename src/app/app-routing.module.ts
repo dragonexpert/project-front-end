@@ -27,6 +27,8 @@ import {SingleGemComponent} from "./components/single-gem/single-gem.component";
 import {SinglePokemonComponent} from "./components/single-pokemon/single-pokemon.component";
 import {UpdateAccountComponent} from "./components/update-account/update-account.component";
 import {ProfileComponent} from "./components/profile/profile.component";
+import {AddAccountComponent} from "./components/add-account/add-account.component";
+import {DeleteAccountComponent} from "./components/delete-account/delete-account.component";
 
 const routes: Routes = [
   { path: "", component: BaseComponent},
@@ -34,25 +36,40 @@ const routes: Routes = [
   { path: "register", component: RegisterComponent, canActivate: [LogoutGuard]},
   { path: "logout", component: LogoutComponent, canActivate: [UserGuard]},
   { path: "account", component: AccountComponent, canActivate: [UserGuard]},
+  { path: "account/add", component: AddAccountComponent, canActivate: [UserGuard]},
+  { path: "account/delete/:id", component: DeleteAccountComponent, canActivate: [UserGuard]},
   { path: "account/update/:id", component: UpdateAccountComponent, canActivate: [UserGuard]},
   { path: "faq", component: FaqComponent},
   { path: "guides", component: GuidesComponent},
+  { path: "guides/:tab", component: GuidesComponent},
   { path: "future", component: FutureComponent},
   { path: "events", component: EventsComponent},
   { path: "codes", component: CodesComponent},
   { path: "rankings", component: RankingsComponent},
+  { path: "rankings/page/:page", component: RankingsComponent},
+  { path: "rankings/:order", component: RankingsComponent},
+  { path: "rankings/:order/page/:page", component: RankingsComponent},
+  { path: "gems/exclusive/:exclusive", component: GemsComponent},
   { path: "gems/:id", component: SingleGemComponent},
   { path: "gems", component: GemsComponent},
   { path: "socialmedia", component: SocialMediaComponent},
   { path: "pokemon/name/:id", component: SinglePokemonComponent},
   { path: "pokemon", component: PokemonComponent},
+  { path: "pokemon/badge/:badge", component: PokemonComponent},
+  { path: "pokemon/gem/:gem", component: PokemonComponent},
+  { path: "pokemon/spirit/:spirit", component: PokemonComponent},
+  { path: "pokemon/tier/:tier", component: PokemonComponent},
+  { path: "pokemon/type/:type", component: PokemonComponent},
   { path: "gallery", component: GalleryComponent},
+  { path: "gallery/:bonus", component: GalleryComponent},
   { path: "donations", component: DonationsComponent},
   { path: "admin", component: AdminComponent, canActivate: [AdminGuard]},
+  { path: "admin/:tab", component: AdminComponent, canActivate: [AdminGuard]},
   { path: "changepassword", component: ChangePasswordComponent, canActivate: [UserGuard]},
   { path: "tier", component: TierComponent},
   { path: "spirit", component: SpiritComponent},
-  { path: "user/:name", component: ProfileComponent}
+  { path: "user/:name", component: ProfileComponent},
+  { path: "**", component: BaseComponent}
 ]
 
 @NgModule({
@@ -63,4 +80,3 @@ const routes: Routes = [
 })
 
 export class AppRoutingModule { };
-

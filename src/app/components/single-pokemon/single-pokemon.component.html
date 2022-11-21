@@ -1,6 +1,19 @@
 <app-navbar></app-navbar>
+<br>
+<div id="pokemonTab">
+  <button class="btn btn-primary" [routerLink]="['/pokemon']">Pokemon</button>
+  <button class="btn btn-primary" [routerLink]="['/tier']">Tier List</button>
+  <button class="btn btn-primary" [routerLink]="['/gems/exclusive/', true]">Exclusive Gems</button>
+  <button class="btn btn-primary" [routerLink]="['/spirit']">Spirits</button>
+</div>
+<br>
+<h2>{{ gemName | capitalization }}</h2>
+<br>
 <table class="table table-info table-bordered">
   <thead>
+  <tr>
+    <th colspan="10" class="text-center">Pokemon Data</th>
+  </tr>
   <tr>
     <th scope="col">ID</th>
     <th scope="col">Name</th>
@@ -18,14 +31,41 @@
   <tr>
     <td>{{ pokemon.pokemon_id }}</td>
     <td>{{ pokemon.name | capitalization }}</td>
-    <td>{{ pokemon.tier_id | tierFormatter }}</td>
+    <td><a [routerLink]="['/pokemon/tier/', pokemon.tier_id]" class="text-decoration-underline" style="cursor: pointer">{{ pokemon.tier_id | tierFormatter }}</a></td>
     <td>{{ pokemon.weapon }}</td>
-    <td>{{ pokemon.badge }}</td>
-    <td>{{ pokemon.evolve_gem }}</td>
-    <td>{{ pokemon.type | capitalization }}</td>
-    <td>{{ pokemon.spirit_id | spiritFormatter }}</td>
+    <td><a [routerLink]="['/pokemon/badge/', pokemon.badge]" class="text-decoration-underline" style="cursor: pointer">{{ pokemon.badge }}</a></td>
+    <td><a [routerLink]="['/pokemon/gem/', pokemon.evolve_gem]" class="text-decoration-underline" style="cursor: pointer">{{ pokemon.evolve_gem }}</a></td>
+    <td><a [routerLink]="['/pokemon/type/', pokemon.type]" class="text-decoration-underline" style="cursor: pointer">{{ pokemon.type | capitalization }}</a></td>
+    <td><a [routerLink]="['/pokemon/spirit/', pokemon.spirit_id]" class="text-decoration-underline" style="cursor: pointer">{{ pokemon.spirit_id | spiritFormatter }}</a></td>
     <td>{{ pokemon.food | capitalization }}</td>
-    <td><a [routerLink]="['/gems/', pokemon.custom_gem_id]" class="text-decoration-underline">Gem Link</a></td>
+    <td><a [routerLink]="['/gems/', pokemon.custom_gem_id]" class="text-decoration-underline" *ngIf="pokemon.custom_gem_id">Gem Link</a></td>
+  </tr>
+  </tbody>
+</table>
+<br>
+<br>
+<table class="table table-info table-bordered">
+  <thead>
+  <tr>
+    <th colspan="6" class="text-center">{{ pokemon.name | capitalization}} Gem Info</th>
+  </tr>
+  <tr>
+    <th scope="col">Name</th>
+    <th scope="col">Color</th>
+    <th scope="col">Attack</th>
+    <th scope="col">Defense</th>
+    <th scope="col">HP</th>
+    <th scope="col">Description</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>{{ gemName | capitalization }}</td>
+    <td>{{ gem.color | capitalization }}</td>
+    <td>{{ gem.attack | number }}</td>
+    <td>{{ gem.defense | number }}</td>
+    <td>{{ gem.hp | number }}</td>
+    <td>{{ gem.description }}</td>
   </tr>
   </tbody>
 </table>
